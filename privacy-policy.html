@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Learn how KiraQR handles QR content, camera access, downloads, sharing, and advertising data."
+    >
+    <meta name="theme-color" content="#eaf3ff">
+    <title>Privacy Policy | KiraQR</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #17243b;
+        background: #eaf3ff;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        margin: 0;
+        padding: 30px 20px;
+        background:
+          radial-gradient(ellipse at 12% 14%, #c4dcff 0, transparent 34%),
+          radial-gradient(ellipse at 88% 82%, #d7d0ff 0, transparent 32%),
+          linear-gradient(145deg, #f7fbff, #e8f1ff 52%, #f5f2ff);
+      }
+
+      .page {
+        width: min(100%, 900px);
+        margin: 0 auto;
+        padding: clamp(24px, 6vw, 56px);
+        border: 1px solid rgb(255 255 255 / 78%);
+        border-radius: 30px;
+        background: linear-gradient(
+          145deg,
+          rgb(255 255 255 / 80%),
+          rgb(255 255 255 / 52%)
+        );
+        box-shadow:
+          0 28px 80px rgb(50 76 125 / 14%),
+          inset 0 1px 0 rgb(255 255 255 / 95%);
+        backdrop-filter: blur(28px) saturate(150%);
+        -webkit-backdrop-filter: blur(28px) saturate(150%);
+      }
+
+      .topbar,
+      .brand,
+      .nav {
+        display: flex;
+        align-items: center;
+      }
+
+      .topbar {
+        justify-content: space-between;
+        gap: 20px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgb(91 117 163 / 17%);
+      }
+
+      .brand {
+        gap: 10px;
+        color: #24395e;
+        font-size: 15px;
+        font-weight: 750;
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border: 1px solid rgb(255 255 255 / 85%);
+        border-radius: 13px;
+        background: linear-gradient(145deg, #fff, #dce9ff);
+        box-shadow: 0 6px 18px rgb(63 104 177 / 15%);
+        color: #486fce;
+      }
+
+      .brand-mark svg {
+        width: 21px;
+        height: 21px;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .nav a {
+        padding: 9px 12px;
+        border: 1px solid transparent;
+        border-radius: 12px;
+        color: #566783;
+        font-size: 13px;
+        font-weight: 620;
+        text-decoration: none;
+      }
+
+      .nav a:hover,
+      .nav a[aria-current="page"] {
+        border-color: rgb(255 255 255 / 90%);
+        background: rgb(255 255 255 / 58%);
+        color: #304d83;
+      }
+
+      .eyebrow {
+        margin: 38px 0 10px;
+        color: #5273b7;
+        font-size: 12px;
+        font-weight: 750;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        color: #17243b;
+        font-size: clamp(38px, 7vw, 58px);
+        font-weight: 720;
+        letter-spacing: -0.055em;
+        line-height: 1.05;
+      }
+
+      .lede {
+        max-width: 720px;
+        margin: 18px 0 0;
+        color: #5a6881;
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 20px;
+      }
+
+      .meta span {
+        padding: 8px 11px;
+        border: 1px solid rgb(255 255 255 / 82%);
+        border-radius: 999px;
+        background: rgb(255 255 255 / 48%);
+        color: #5a6881;
+        font-size: 12px;
+        font-weight: 620;
+      }
+
+      .notice {
+        margin-top: 26px;
+        padding: 18px 20px;
+        border: 1px solid rgb(255 255 255 / 85%);
+        border-left: 3px solid #6f8fe0;
+        border-radius: 16px;
+        background: rgb(255 255 255 / 54%);
+        color: #4e5e79;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .notice strong {
+        color: #273d64;
+      }
+
+      .policy-section {
+        margin-top: 34px;
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        color: #23395f;
+        font-size: 21px;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+      }
+
+      h3 {
+        margin: 22px 0 8px;
+        color: #344a70;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .policy-section p,
+      .policy-section li {
+        color: #586780;
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .policy-section p {
+        margin: 0 0 12px;
+      }
+
+      .policy-section ul {
+        margin: 10px 0 14px;
+        padding-left: 22px;
+      }
+
+      .policy-section li {
+        padding-left: 3px;
+        margin: 5px 0;
+      }
+
+      a {
+        color: #456bc2;
+        text-underline-offset: 3px;
+      }
+
+      a:hover {
+        color: #304d99;
+      }
+
+      a:focus-visible {
+        outline: 3px solid #6b8ee7;
+        outline-offset: 4px;
+        border-radius: 4px;
+      }
+
+      .contact-card,
+      .checklist {
+        margin-top: 16px;
+        padding: 18px 20px;
+        border: 1px solid rgb(255 255 255 / 88%);
+        border-radius: 17px;
+        background: rgb(255 255 255 / 48%);
+      }
+
+      .contact-card p:last-child,
+      .checklist p:last-child {
+        margin-bottom: 0;
+      }
+
+      .checklist {
+        border-left: 3px solid #9a84d4;
+      }
+
+      footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px 24px;
+        margin-top: 38px;
+        padding-top: 22px;
+        border-top: 1px solid rgb(91 117 163 / 17%);
+        color: #6b7890;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+      }
+
+      @media (max-width: 560px) {
+        body {
+          padding: 14px 10px;
+        }
+
+        .page {
+          border-radius: 24px;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .nav {
+          justify-content: flex-start;
+          margin-left: -10px;
+        }
+
+        .eyebrow {
+          margin-top: 30px;
+        }
+
+        footer {
+          flex-direction: column;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="KiraQR support home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+              />
+              <path
+                d="M8 8h3v3H8zM15 8h1v1h-1zM14 11h2v2h-2zM8 15h1v1H8zM11 14h2v2h-2zM16 16h-1v-1h1z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span>✦ KiraQR</span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="index.html">Support</a>
+          <a href="privacy-policy.html" aria-current="page">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </nav>
+      </header>
+
+      <p class="eyebrow">KiraQR · Your privacy</p>
+      <h1>Privacy Policy</h1>
+      <p class="lede">
+        This policy explains how KiraQR handles information when you create,
+        scan, save, or share QR codes using the app.
+      </p>
+      <div class="meta" aria-label="Policy details">
+        <span>Effective date: 10 November 2026</span>
+        <span>Individual developer</span>
+        <span>No account required</span>
+      </div>
+
+      <aside class="notice">
+        <strong>Important:</strong> QR content is processed on your device by
+        KiraQR. However, KiraQR displays advertisements using Google AdMob.
+        AdMob may collect and process certain device and advertising information
+        as described below. Do not interpret “on-device processing” as meaning
+        that no information is ever shared with a third party.
+      </aside>
+
+      <section class="policy-section" id="operator">
+        <h2>1. Who operates KiraQR?</h2>
+        <p>
+          KiraQR is an Android application operated by an individual developer.
+          For privacy questions or requests, contact
+          <a href="mailto:walunjrohit38@gmail.com">walunjrohit38@gmail.com</a>.
+        </p>
+        <p>
+          In this policy, “KiraQR”, “the app”, “we”, or “us” refers to the
+          KiraQR application and its developer.
+        </p>
+      </section>
+
+      <section class="policy-section" id="information">
+        <h2>2. Information handled by KiraQR</h2>
+
+        <h3>QR codes and URLs</h3>
+        <p>
+          When you enter a URL or other supported content to create a QR code,
+          KiraQR processes that content locally on your device to generate the
+          QR code. KiraQR does not operate a server that receives or stores the
+          QR content.
+        </p>
+
+        <h3>QR scanning and camera</h3>
+        <p>
+          KiraQR uses your device camera only to scan QR codes. The camera
+          permission is used to capture the image needed for scanning. Based on
+          the app's current design, scan content is processed on the device and
+          is not uploaded by KiraQR to a KiraQR server.
+        </p>
+        <p>
+          You can deny camera permission, but QR scanning will not work unless
+          the permission is granted. You can manage camera permission in your
+          Android device settings.
+        </p>
+
+        <h3>Downloads and sharing</h3>
+        <p>
+          If you choose to download a generated QR image, Android saves it to a
+          location on your device that you select or that the app uses. If you
+          choose to share a QR image or link, Android passes the item to the app
+          or service you select. That receiving app or service handles the
+          information under its own terms and privacy policy.
+        </p>
+
+        <h3>No in-app QR history</h3>
+        <p>
+          The current version of KiraQR does not provide a QR history feature
+          and does not maintain a KiraQR account or cloud history.
+        </p>
+      </section>
+
+      <section class="policy-section" id="advertising">
+        <h2>3. Advertising and Google AdMob</h2>
+        <p>
+          KiraQR uses Google AdMob to display banner and interstitial
+          advertisements. AdMob is provided by Google and operates independently
+          from KiraQR.
+        </p>
+        <p>
+          When ads are requested or displayed, Google and its advertising
+          partners may automatically collect or receive information such as:
+        </p>
+        <ul>
+          <li>IP address and general network information;</li>
+          <li>
+            device identifiers, including advertising identifiers where
+            available and permitted;
+          </li>
+          <li>device model, operating system, language, and related technical information;</li>
+          <li>ad impressions, clicks, interactions, and diagnostic information; and</li>
+          <li>
+            information used to deliver, measure, limit, or personalize
+            advertising, depending on your location, consent choices, device
+            settings, and the app's AdMob configuration.
+          </li>
+        </ul>
+        <p>
+          The exact data processed can vary based on Google's SDK version, your
+          device and region, consent status, and the advertising settings used
+          by the app. KiraQR does not control Google's independent data
+          practices.
+        </p>
+        <p>
+          For more information, review
+          <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>
+          and
+          <a href="https://developers.google.com/admob/android/privacy">
+            Google's guidance on AdMob privacy and consent</a>.
+        </p>
+      </section>
+
+      <section class="policy-section" id="consent">
+        <h2>4. Advertising choices and consent</h2>
+        <p>
+          Ad personalization and consent requirements may differ by country or
+          region. Where required, KiraQR should present an appropriate consent
+          or privacy-options flow using Google's User Messaging Platform (UMP)
+          or another compliant mechanism before requesting ads that require
+          consent.
+        </p>
+        <p>
+          You may also be able to reset or limit your device's advertising
+          identifier or adjust advertising privacy settings through Android
+          settings. Available controls depend on your Android version and
+          device manufacturer.
+        </p>
+      </section>
+
+      <section class="policy-section" id="sharing">
+        <h2>5. When information is shared</h2>
+        <p>KiraQR does not sell your QR content. QR content is not sent to a KiraQR-operated server. Information may nevertheless be handled by third parties in these situations:</p>
+        <ul>
+          <li>
+            <strong>AdMob:</strong> Google processes advertising and technical
+            information as described in Section 3.
+          </li>
+          <li>
+            <strong>Sharing:</strong> when you deliberately share a QR image or
+            URL using another app, that app receives the item you selected.
+          </li>
+          <li>
+            <strong>External links:</strong> when you open a scanned URL, your
+            browser or the destination website may receive information as part
+            of the normal web request.
+          </li>
+          <li>
+            <strong>Legal requirements:</strong> information may be disclosed if
+            required by applicable law or valid legal process. The developer
+            does not maintain a KiraQR server containing QR content.
+          </li>
+        </ul>
+      </section>
+
+      <section class="policy-section" id="retention">
+        <h2>6. Data retention and deletion</h2>
+        <p>
+          KiraQR does not maintain an account or server-side database of QR
+          content. Generated QR content is handled locally. QR images that you
+          download remain on your device until you delete them. Items shared
+          with another app may be retained by that app under its own policies.
+        </p>
+        <p>
+          Advertising information handled by Google is subject to Google's
+          retention and deletion practices. Refer to Google's privacy resources
+          for details and available controls.
+        </p>
+      </section>
+
+      <section class="policy-section" id="security">
+        <h2>7. Security</h2>
+        <p>
+          We aim to limit KiraQR's handling of QR content to on-device
+          processing. No app, device, or transmission method can be guaranteed
+          to be completely secure. Keep your device and Android version updated,
+          and be careful when scanning QR codes from unknown sources.
+        </p>
+      </section>
+
+      <section class="policy-section" id="children">
+        <h2>8. Children's privacy</h2>
+        <p>
+          KiraQR is not designed to request a child's name, contact details, or
+          account information. The app uses a third-party advertising SDK, and
+          advertising treatment may depend on the app's audience settings and
+          applicable law. The developer must ensure the app's target-audience
+          declaration and advertising configuration are appropriate. If you
+          believe information has been provided to the developer in error,
+          contact us.
+        </p>
+      </section>
+
+      <section class="policy-section" id="permissions">
+        <h2>9. App permissions</h2>
+        <ul>
+          <li>
+            <strong>Camera:</strong> used to scan QR codes. It is not intended
+            for recording or uploading video or photos.
+          </li>
+          <li>
+            <strong>Storage / media access:</strong> if requested by the Android
+            version or implementation, used to save a QR image to your device.
+            Android's system photo picker or MediaStore may be used instead,
+            depending on implementation.
+          </li>
+          <li>
+            <strong>Network access:</strong> may be used by the advertising SDK
+            to request and display ads. Opening a URL or sharing content also
+            involves the selected external app or service.
+          </li>
+        </ul>
+        <p>
+          Actual permissions can vary by Android version and the app build.
+          Review the permission prompts shown on your device.
+        </p>
+      </section>
+
+      <section class="policy-section" id="changes">
+        <h2>10. Changes to this policy</h2>
+        <p>
+          We may update this policy when KiraQR's features, SDKs, legal
+          requirements, or data practices change. The updated policy will be
+          published at this URL with a revised effective date. Please review it
+          periodically.
+        </p>
+      </section>
+
+      <section class="policy-section" id="contact">
+        <h2>11. Contact</h2>
+        <p>
+          For questions about this Privacy Policy or KiraQR's privacy practices,
+          contact:
+        </p>
+        <div class="contact-card">
+          <p><strong>KiraQR Developer</strong></p>
+          <p>
+            Email:
+            <a href="mailto:walunjrohit38@gmail.com">walunjrohit38@gmail.com</a>
+          </p>
+        </div>
+      </section>
+
+      <aside class="checklist">
+        <p>
+          <strong>Developer publication checklist:</strong> Before publishing,
+          verify the AdMob SDK's actual data collection and consent
+          configuration, the app's Android permissions, and the Play Console
+          Data safety answers. This policy is a starting draft based on the
+          product details supplied by the developer; it is not a legal
+          certification or a substitute for checking the actual build.
+        </p>
+      </aside>
+
+      <footer>
+        <span>© 2026 KiraQR. All rights reserved.</span>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="privacy-policy.html" aria-current="page">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="mailto:walunjrohit38@gmail.com">Contact</a>
+        </nav>
+      </footer>
+    </main>
+  </body>
+</html>
